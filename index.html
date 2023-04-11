@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form>
+        <label>
+            <div class="slider">
+                <input type="range" min="1" max="5" step="0.1" value="1" id="slider">
+                <label for="slider">Point Size:</label>
+                <output for="slider" id="value">1</output>
+            </div>
+              
+      
+
+      
+    <div id="cursorValues">R: 0, X: 0, VSWR: 0</div>
+
+    <div class="input-group">
+        <label for="char-input">Characteristic Impedance:</label>
+        <input type="text" id="char-input" name="char-input">
+        <button onclick="updateChar()">Submit</button>
+      </div>
+      <div class="input-group">
+        <label for="freq-input">Frequency:</label>
+        <input type="text" id="freq-input" name="freq-input">
+        <button onclick="updateFreq()">Submit</button>
+      </div>
+      
+   
+<style>
+.slider {
+    display: flex;
+    margin-bottom: 10px;
+}
+.input-group {
+  
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  margin-right: 10px;
+}
+
+.input-group input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-group button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.input-group button:hover {
+  background-color: #3e8e41;
+}
+
+        /* Style for the container element */
+        body {
+  background-color: white;
+}
+        #container {
+            
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            margin-top: 100px;
+    
+            flex-wrap: wrap;
+        }
+        #container2 {
+            position: relative;
+        }
+
+        .circuit-object {
+        transform: scale(1);
+    }
+    #cursorValues {
+  position: fixed;
+  bottom: 90%;
+  right: 20%;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  z-index: 9999;
+  transform: translateZ(0);
+}
+</style>
+      <div id="parent">
+        <div id="container2" style="text-align:center;">
+            <canvas id = "mycanvas">
+            
+            </canvas>
+            <style> 
+            #mycanvas{
+                border-radius: 50%;
+            }
+            </style>
+        </div>
+    <div id="container"></div>
+
+</div>
+</body>
+
+
+<script src="index.js"></script>
+</html>
